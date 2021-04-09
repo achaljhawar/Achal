@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style type="text/css">
+		@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+		/* Global */
+		html {
+			min-height: 100%;
+			overflow: hidden;
+		}
+
+		body {
+			height: calc(100vh - 8em);
+			padding: 4em;
+			color: rgba(255, 255, 255, .75);
+			font-family: 'Anonymous Pro', monospace;
+			background-color: rgb(25, 25, 25);
+		}
+
+		.line-1 {
+			top: 50%;
+			width: 29em;
+			margin: 0 auto;
+			font-size: 150%;
+			text-align: center;
+			overflow: hidden;
+		}
+
+		.button {
+			--light: #fff;
+			--dark: #414856;
+			--border: #C3C8DE;
+			--background: #4F29F0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			border: 0;
+			padding: 0 30px;
+			width: auto;
+			height: 60px;
+			border-radius: 2px;
+			border: 1px solid var(--border);
+			background: none;
+			color: var(--dark);
+			cursor: pointer;
+			outline: none;
+			box-shadow: 0 10px 30px rgba(65, 72, 86, 0.1);
+			transition: transform 0.1s linear, color 0.1s linear, background 0.15s linear;
+			cursor: none;
+			font-weight: 400;
+			font-size: 20px;
+		}
+
+		.button>span {
+			display: inline-block;
+			position: relative;
+			z-index: 2;
+			font-family: 'Anonymous Pro', monospace;
+			transition: transform 0.15s linear;
+		}
+
+		.button.fill {
+			border: 0;
+			color: var(--light);
+			background: var(--background);
+		}
+
+		.cursor {
+			--cursor: #C3C8DE;
+			position: fixed;
+			top: -50px;
+			z-index: 99;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background: none;
+			border: solid 2px var(--cursor);
+			pointer-events: none;
+			transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+		}
+
+		[cursor=link]:hover~.cursor {
+			mix-blend-mode: difference;
+			transform: scale(1.5);
+			cursor: none;
+			background: #fff;
+			border-color: #fff;
+		}
+
+		body {
+			background: #000;
+			height: 100vh;
+		}
+
+		body .button {
+			margin: 2px 2px;
+		}
+	</style>
+</head>
+
+<body>
+	<button class="button fill" cursor="link" align="right" onclick="window.location.replace('/')">
+<span>Take me back</span>
+</button>
+<div class="cursor"></div>
+<h1 align="center">About me</h1>
+<p id="demo" align="center" class="line-1"></p>
+<script>
+var i = 0;
+var txt = 'I am 14 and a Certified Google developer ,I am a student of class 10th at Delhi Public School,Indore. I develop meaningful actions on Google Assistant to provide an interactive experience with users worldwide . I keep interest in Computer Science and Emerging Technologies around the world. I have completed the CS50 course of game development.';
+var speed = 40;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+window.onload = typeWriter;
+// --- BUTTON
+const $ = (s, o = document) => o.querySelector(s);
+const $$ = (s, o = document) => o.querySelectorAll(s);
+
+$$('.button').forEach(el => el.addEventListener('mousemove', function(e) {
+  const pos = this.getBoundingClientRect();
+  const mx = e.clientX - pos.left - pos.width/2; 
+  const my = e.clientY - pos.top - pos.height/2;
+   
+  this.style.transform = 'translate('+ mx * 0.15 +'px, '+ my * 0.3 +'px)';
+  this.style.transform += 'rotate3d('+ mx * -0.1 +', '+ my * -0.3 +', 0, 12deg)';
+  this.children[0].style.transform = 'translate('+ mx * 0.025 +'px, '+ my * 0.075 +'px)';
+}));
+
+$$('.button').forEach(el => el.addEventListener('mouseleave', function() {
+  this.style.transform = 'translate3d(0px, 0px, 0px)';
+  this.style.transform += 'rotate3d(0, 0, 0, 0deg)';
+  this.children[0].style.transform = 'translate3d(0px, 0px, 0px)';
+}));
+
+// --- CURSOR
+document.addEventListener('mousemove', function(e) {
+  $('.cursor').style.left = (e.pageX - 25) + 'px';
+  $('.cursor').style.top = (e.pageY - 25) + 'px';
+});
+</script>
+</body>
+</html>
