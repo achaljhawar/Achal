@@ -20,6 +20,8 @@ app.get('/about',(req, res) => {
 app.get('/contact',(req, res) => {
   res.render('contact')
 })
-
+app.get('/projects',(req, res) => {
+  res.render('projects')
+})
 
 app.listen(port , () => console.info(`Listening and port ${port}`))

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Projects Page</title>
+	<style type="text/css">
+		@import url("https://fonts.googleapis.com/css?family=Marvel:400,700");
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: "Marvel", sans-serif;
+			background-color: black;
+		}
+
+		#info {
+			background-color: black;
+			padding: 2rem 0;
+		}
+
+		.row {
+			width: 100%;
+			max-width: 45rem;
+			margin: 0 auto;
+			padding: 1.5rem;
+			background-color: black;
+		}
+
+		.card {
+			display: inline-block;
+			width: 45%;
+			padding: 4rem 1rem 7rem 1rem;
+			background-color: teal;
+			position: relative;
+		}
+
+		.card:after {
+			content: "";
+			display: block;
+			width: 0px;
+			height: 0px;
+			background-color: skyblue;
+			top: 0px;
+			right: 0px;
+			border-bottom: 20px solid #006767;
+			border-left: 20px solid #006767;
+			border-right: 20px solid black;
+			border-top: 20px solid black;
+			position: absolute;
+			filter: drop-shadow(-5px 5px 3px rgba(0, 0, 0, 0.5));
+		}
+
+		.card:before {
+			content: "";
+			display: block;
+			width: 0px;
+			height: 0px;
+			border-top: 40px solid #006767;
+			border-right: 40px solid #006767;
+			border-left: 40px solid black;
+			border-bottom: 40px solid black;
+			bottom: 0px;
+			left: 0px;
+			position: absolute;
+			filter: drop-shadow(7px -7px 5px rgba(0, 0, 0, 0.5));
+			margin-right: 10%;
+		}
+
+		.card:nth-of-type(1) {
+			margin-right: 9%;
+		}
+
+		.card h2 {
+			color: snow;
+			margin-bottom: 1rem;
+			font-weight: 400;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+
+		.card p {
+			color: snow;
+			font-size: 1.1rem;
+			line-height: 140%;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- partial:index.partial.html -->
+	<section id="info">
+		<div class="row">
+			<div class="card">
+				<h2 align="center">Tyniurl</h2>
+				<p>It is a hassle free url shortner. You can use it to create QR codes and shorten urls.I'm not a professional coder,
+					but i tried my best to make it look cool and yet still keep it simple. While working with JS i got many errors, but
+					thanks to Youtube Tutorials for helping me fix them.<a href="https://github.com/achaljhawar/Tyniurl">GitHub</a></p>
+			</div>
+			<div class="card">
+				<h2 align="center">Gryffin</h2>
+				<p>Gryffin is a specialised search engine meant to find you the best possible results from a variety of search engines
+					including Bing, Google & Yahoo. Gryffin fetches results from these engines based on your query, filters them and finds
+					the best of all to show to you. You can have a look it at <a href="https://github.com/halo-legion/Gryffin">GitHub</a></p>
+			</div>
+		</div>
+	</section>
+	<!-- partial -->
+
+</body>
+
+</html>
