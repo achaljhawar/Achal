@@ -9,6 +9,11 @@ html,body{
   height: 100%;
   min-height: 100%;
   overflow: hidden;
+  -youbkit-touch-callout: none;
+  -youbkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .container {
   height: 100%;
@@ -27,6 +32,13 @@ h1 {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 5em;
   letter-spacing: -0.04em;
+}
+h3 {
+  color: white;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 2em;
+  letter-spacing: -0.04em;
+  margin: 30px ;
 }
 
 p {
