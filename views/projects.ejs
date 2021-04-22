@@ -4,11 +4,89 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Projects | achaljhawar</title>
+  <link rel="shortcut icon" type="image/ico" href="icons/favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css'>
 	<style type="text/css">
+  @import url("https://fonts.googleapis.com/css?family=Montserrat:600&display=swap");
+
+  .multi-button {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+  .multi-button button {
+  background: white;
+  border: 0.125em solid black;
+  cursor: pointer;
+  font: 600 1.5rem/1.25 "Montserrat", sans-serif;
+  letter-spacing: 0.125em;
+  margin: 0.5rem;
+  padding: 0.5em 0.75em;
+  position: relative;
+  text-transform: uppercase;
+  }
+  .multi-button button:before, .multi-button button:after {
+   content: "";
+   position: absolute;
+   transition: all 0.125s ease-in-out;
+  }
+  .multi-button button.cut {
+    background: none;
+    border-color: transparent;
+  }
+  .multi-button button.cut:before, .multi-button button.cut:after {
+   transition: all 0.175s ease-in-out;
+  }
+  .multi-button button.cut:before {
+    background: black;
+    border: 0px dashed black;
+    left: -0.125em;
+    top: -0.125em;
+    right: -0.125em;
+    bottom: -0.125em;
+    z-index: -1;
+  }
+  .multi-button button.cut:hover:before, .multi-button button.cut:focus:before {
+    background: white;
+    border-width: 0.125em;
+  } 
+  .multi-button button.cut:after {
+    background: white;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+  .multi-button button.copy:after {
+    border: 0.125em dashed black;
+    bottom: -0.125em;
+    left: -0.125em;
+    right: -0.125em;
+    top: -0.125em;
+    z-index: -1;
+  }
+  .multi-button button.copy:hover:after, .multi-button button.copy:focus:after {
+    bottom: -0.375em;
+    left: 0.125em;
+    right: -0.375em;
+    top: 0.125em;
+  } 
+  .multi-button button.paste:after {
+    border: 0.125em dashed black;
+    bottom: -0.125em;
+    left: -0.125em;
+    right: -0.125em;
+    top: -0.125em;
+  }
+  .multi-button button.paste:hover:after, .multi-button button.paste:focus:after {
+    bottom: 0.125em;
+    left: 0.125em;
+    right: 0.125em;
+    top: 0.125em;
+ }
 		body {
 			padding: 50px;
 			display: flex;

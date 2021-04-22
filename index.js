@@ -7,7 +7,6 @@ app.use('/css' , express.static(__dirname + 'public/css'))
 app.use('/js' , express.static(__dirname + 'public/js'))
 app.use('/icons' , express.static(__dirname + 'public/icons'))
 
-
 app.set('views' , './views')
 app.set('view engine' , 'ejs')
 
@@ -26,5 +25,4 @@ app.get('/projects',(req, res) => {
 app.get('/achievements',(req, res) => {
   res.render('achievements')
 })
-
 app.listen(port , () => console.info(`Listening and port ${port}`))
