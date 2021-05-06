@@ -25,4 +25,7 @@ app.get('/projects',(req, res) => {
 app.get('/achievements',(req, res) => {
   res.render('achievements')
 })
+app.get("*", (req,res) =>{
+  res.sendFile(__dirname + '/views/404.html')
+})
 app.listen(port , () => console.info(`Listening and port ${port}`))
