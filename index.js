@@ -27,4 +27,4 @@ app.get('/achievements',(req, res) => {
 app.get("*", (req,res) =>{
   res.sendFile(__dirname + '/views/404.html')
 })
-app.listen(3000)
+app.listen(process.env.PORT||3000)
