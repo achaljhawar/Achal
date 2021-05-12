@@ -3,12 +3,13 @@
   margin: 0;
   text-decoration: none;
 }
-html,body{
+html,
+body {
   background-color: black;
   height: 100%;
   min-height: 100%;
-  -youbkit-touch-callout: none;
-  -youbkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -37,7 +38,7 @@ h3 {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.01em;
   letter-spacing: -0.04em;
-  margin: 30px ;
+  margin: 30px;
 }
 
 p {
@@ -62,84 +63,74 @@ p {
   background-color: rgb(22, 22, 22);
 }
 
-body
-{
+body {
   font-family: "Avenir Next", "Avenir", sans-serif;
 }
-#menuToggle
-{
+#menuToggle {
   display: block;
   position: relative;
   top: 50px;
   left: 50px;
-  
+
   z-index: 1;
-  
+
   -webkit-user-select: none;
   user-select: none;
 }
 
-#menuToggle a
-{
+#menuToggle a {
   text-decoration: none;
   color: #232323;
-  
+
   transition: color 0.3s ease;
 }
 
-#menuToggle a:hover
-{
+#menuToggle a:hover {
   color: blue;
 }
 
-
-#menuToggle input
-{
+#menuToggle input {
   display: block;
   width: 50px;
   height: 50px;
   position: absolute;
   top: -7px;
   left: -5px;
-  
+
   cursor: pointer;
-  
+
   opacity: 0; /* hide this */
   z-index: 2; /* and place it over the hamburger */
-  
+
   -webkit-touch-callout: none;
 }
 
 /*
  * Just a quick hamburger
  */
-#menuToggle span
-{
+#menuToggle span {
   display: block;
   width: 33px;
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  
+
   background: #cdcdcd;
   border-radius: 3px;
-  
+
   z-index: 1;
-  
+
   transform-origin: 4px 0px;
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
 
-#menuToggle span:first-child
-{
+#menuToggle span:first-child {
   transform-origin: 0% 0%;
 }
 
-#menuToggle span:nth-last-child(2)
-{
+#menuToggle span:nth-last-child(2) {
   transform-origin: 0% 100%;
 }
 
@@ -147,8 +138,7 @@ body
  * Transform all the slices of hamburger
  * into a crossmark.
  */
-#menuToggle input:checked ~ span
-{
+#menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
@@ -157,8 +147,7 @@ body
 /*
  * But let's hide the middle one.
  */
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
+#menuToggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
@@ -166,8 +155,7 @@ body
 /*
  * Ohyeah and the last one should go the other direction
  */
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
+#menuToggle input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
@@ -175,28 +163,26 @@ body
  * Make this absolute positioned
  * at the top left of the screen
  */
-#menu
-{
+#menu {
   position: absolute;
   width: 150px;
-  height:430px;
+  height: 430px;
   margin: -100px 0 0 -50px;
   padding: 100px;
   padding-top: 125px;
-  
+
   background: #ededed;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
-  
+
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
-#menu li
-{
+#menu li {
   padding: 10px 0;
   font-size: 22px;
 }
@@ -204,15 +190,13 @@ body
 /*
  * And let's slide it in from the left
  */
-#menuToggle input:checked ~ ul
-{
+#menuToggle input:checked ~ ul {
   transform: none;
 }
 
 :root {
-  font-size: calc(16px + (24 - 16)*(100vw - 320px)/ (1280 - 320));
+  font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
 }
-
 
 .preloader {
   animation: tiltSpin 8s linear infinite;
@@ -231,7 +215,8 @@ body
   padding: 0;
   display: flex;
 }
-.preloader, .preloader__ring {
+.preloader,
+.preloader__ring {
   transform-style: preserve-3d;
 }
 .preloader__ring {
@@ -256,13 +241,18 @@ body
   text-transform: uppercase;
   transform: translateZ(7rem);
 }
-.preloader__sector, .preloader__sector:empty:before {
+.preloader__sector,
+.preloader__sector:empty:before {
   display: inline-block;
   width: 100%;
   height: 100%;
 }
 .preloader__sector:empty:before {
-  background: linear-gradient(transparent 45%, currentColor 45% 55%, transparent 55%);
+  background: linear-gradient(
+    transparent 45%,
+    currentColor 45% 55%,
+    transparent 55%
+  );
   content: "";
 }
 .preloader__sector:nth-child(2) {
@@ -415,7 +405,7 @@ main {
   border-right: 12px solid transparent;
   border-bottom: 21.6px solid #fd7000;
   -webkit-animation: blink 1s infinite;
-          animation: blink 1s infinite;
+  animation: blink 1s infinite;
   filter: drop-shadow(0 0 18px #fd7000);
 }
 .arrow.down {
@@ -423,99 +413,99 @@ main {
 }
 .arrow.outer-1 {
   -webkit-animation-delay: -0.0555555556s;
-          animation-delay: -0.0555555556s;
+  animation-delay: -0.0555555556s;
 }
 .arrow.outer-2 {
   -webkit-animation-delay: -0.1111111111s;
-          animation-delay: -0.1111111111s;
+  animation-delay: -0.1111111111s;
 }
 .arrow.outer-3 {
   -webkit-animation-delay: -0.1666666667s;
-          animation-delay: -0.1666666667s;
+  animation-delay: -0.1666666667s;
 }
 .arrow.outer-4 {
   -webkit-animation-delay: -0.2222222222s;
-          animation-delay: -0.2222222222s;
+  animation-delay: -0.2222222222s;
 }
 .arrow.outer-5 {
   -webkit-animation-delay: -0.2777777778s;
-          animation-delay: -0.2777777778s;
+  animation-delay: -0.2777777778s;
 }
 .arrow.outer-6 {
   -webkit-animation-delay: -0.3333333333s;
-          animation-delay: -0.3333333333s;
+  animation-delay: -0.3333333333s;
 }
 .arrow.outer-7 {
   -webkit-animation-delay: -0.3888888889s;
-          animation-delay: -0.3888888889s;
+  animation-delay: -0.3888888889s;
 }
 .arrow.outer-8 {
   -webkit-animation-delay: -0.4444444444s;
-          animation-delay: -0.4444444444s;
+  animation-delay: -0.4444444444s;
 }
 .arrow.outer-9 {
   -webkit-animation-delay: -0.5s;
-          animation-delay: -0.5s;
+  animation-delay: -0.5s;
 }
 .arrow.outer-10 {
   -webkit-animation-delay: -0.5555555556s;
-          animation-delay: -0.5555555556s;
+  animation-delay: -0.5555555556s;
 }
 .arrow.outer-11 {
   -webkit-animation-delay: -0.6111111111s;
-          animation-delay: -0.6111111111s;
+  animation-delay: -0.6111111111s;
 }
 .arrow.outer-12 {
   -webkit-animation-delay: -0.6666666667s;
-          animation-delay: -0.6666666667s;
+  animation-delay: -0.6666666667s;
 }
 .arrow.outer-13 {
   -webkit-animation-delay: -0.7222222222s;
-          animation-delay: -0.7222222222s;
+  animation-delay: -0.7222222222s;
 }
 .arrow.outer-14 {
   -webkit-animation-delay: -0.7777777778s;
-          animation-delay: -0.7777777778s;
+  animation-delay: -0.7777777778s;
 }
 .arrow.outer-15 {
   -webkit-animation-delay: -0.8333333333s;
-          animation-delay: -0.8333333333s;
+  animation-delay: -0.8333333333s;
 }
 .arrow.outer-16 {
   -webkit-animation-delay: -0.8888888889s;
-          animation-delay: -0.8888888889s;
+  animation-delay: -0.8888888889s;
 }
 .arrow.outer-17 {
   -webkit-animation-delay: -0.9444444444s;
-          animation-delay: -0.9444444444s;
+  animation-delay: -0.9444444444s;
 }
 .arrow.outer-18 {
   -webkit-animation-delay: -1s;
-          animation-delay: -1s;
+  animation-delay: -1s;
 }
 .arrow.inner-1 {
   -webkit-animation-delay: -0.1666666667s;
-          animation-delay: -0.1666666667s;
+  animation-delay: -0.1666666667s;
 }
 .arrow.inner-2 {
   -webkit-animation-delay: -0.3333333333s;
-          animation-delay: -0.3333333333s;
+  animation-delay: -0.3333333333s;
 }
 .arrow.inner-3 {
   -webkit-animation-delay: -0.5s;
-          animation-delay: -0.5s;
+  animation-delay: -0.5s;
 }
 .arrow.inner-4 {
   -webkit-animation-delay: -0.6666666667s;
-          animation-delay: -0.6666666667s;
+  animation-delay: -0.6666666667s;
 }
 .arrow.inner-5 {
   -webkit-animation-delay: -0.8333333333s;
-          animation-delay: -0.8333333333s;
+  animation-delay: -0.8333333333s;
 }
 .arrow.inner-6 {
   -webkit-animation-delay: -1s;
-          animation-delay: -1s;
+  animation-delay: -1s;
 }
 
 @-webkit-keyframes blink {
@@ -543,145 +533,204 @@ main {
 }
 
 .hexagon {
-	margin-bottom: 1.5em;
-	overflow: hidden;
-	position: relative;
-	width: 15em;
-	height: 15em;
+  margin-bottom: 1.5em;
+  overflow: hidden;
+  position: relative;
+  width: 15em;
+  height: 15em;
   background: var(--bg);
-	color: var(--fg);
-	font: bold 1em/1.5 "Comfortaa", sans-serif;
-	display: grid;
-	place-items: center;
-	align-content: center;
-	height: 100vh;
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
+  color: var(--fg);
+  font: bold 1em/1.5 "Comfortaa", sans-serif;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  height: 100vh;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
-.hexagon__group, .hexagon__sector, .hexagon__sector:before, .hexagon__sector:after {
-	position: absolute;
+.hexagon__group,
+.hexagon__sector,
+.hexagon__sector:before,
+.hexagon__sector:after {
+  position: absolute;
 }
 .hexagon__group {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 .hexagon__group:nth-child(2) .hexagon__sector,
 .hexagon__group:nth-child(2) .hexagon__sector:before,
 .hexagon__group:nth-child(2) .hexagon__sector:after {
-	animation-delay: calc(var(--dur) * -1/6);
+  animation-delay: calc(var(--dur) * -1 / 6);
 }
 .hexagon__group:nth-child(3) .hexagon__sector,
 .hexagon__group:nth-child(3) .hexagon__sector:before,
 .hexagon__group:nth-child(3) .hexagon__sector:after {
-	animation-delay: calc(var(--dur) * -2/6);
+  animation-delay: calc(var(--dur) * -2 / 6);
 }
 .hexagon__group:nth-child(4) .hexagon__sector,
 .hexagon__group:nth-child(4) .hexagon__sector:before,
 .hexagon__group:nth-child(4) .hexagon__sector:after {
-	animation-delay: calc(var(--dur) * -3/6);
+  animation-delay: calc(var(--dur) * -3 / 6);
 }
 .hexagon__group:nth-child(5) .hexagon__sector,
 .hexagon__group:nth-child(5) .hexagon__sector:before,
 .hexagon__group:nth-child(5) .hexagon__sector:after {
-	animation-delay: calc(var(--dur) * -4/6);
+  animation-delay: calc(var(--dur) * -4 / 6);
 }
 .hexagon__group:nth-child(6) .hexagon__sector,
 .hexagon__group:nth-child(6) .hexagon__sector:before,
 .hexagon__group:nth-child(6) .hexagon__sector:after {
-	animation-delay: calc(var(--dur) * -5/6);
+  animation-delay: calc(var(--dur) * -5 / 6);
 }
 .hexagon__group:nth-child(odd) {
-	transform: rotate(30deg);
+  transform: rotate(30deg);
 }
-.hexagon__sector, .hexagon__sector:before, .hexagon__sector:after {
-	animation-duration: var(--dur);
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
-	/*animation-play-state: paused;*/
-	width: 0.2em;
-	height: 0.2em;
+.hexagon__sector,
+.hexagon__sector:before,
+.hexagon__sector:after {
+  animation-duration: var(--dur);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  /*animation-play-state: paused;*/
+  width: 0.2em;
+  height: 0.2em;
 }
 .hexagon__sector {
-	animation-name: moveOut1;
-	top: calc(50% - 0.1em);
-	left: calc(50% - 0.1em);
+  animation-name: moveOut1;
+  top: calc(50% - 0.1em);
+  left: calc(50% - 0.1em);
 }
 .hexagon__sector:nth-child(2) {
-	animation-name: moveOut2;
+  animation-name: moveOut2;
 }
 .hexagon__sector:nth-child(3) {
-	animation-name: moveOut3;
+  animation-name: moveOut3;
 }
 .hexagon__sector:nth-child(4) {
-	animation-name: moveOut4;
+  animation-name: moveOut4;
 }
 .hexagon__sector:nth-child(5) {
-	animation-name: moveOut5;
+  animation-name: moveOut5;
 }
 .hexagon__sector:nth-child(6) {
-	animation-name: moveOut6;
+  animation-name: moveOut6;
 }
-.hexagon__sector:before, .hexagon__sector:after {
-	animation-name: ripple;
-	background-color: currentColor;
-	border-radius: 0.1em;
-	content: "";
-	display: block;
-	top: 0;
-	left: 0;
-	transform-origin: 0.1em 0.1em;
+.hexagon__sector:before,
+.hexagon__sector:after {
+  animation-name: ripple;
+  background-color: currentColor;
+  border-radius: 0.1em;
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  transform-origin: 0.1em 0.1em;
 }
 .hexagon__sector:before {
-	transform: rotate(-30deg)
+  transform: rotate(-30deg);
 }
 .hexagon__sector:after {
-	transform: rotate(-150deg)
+  transform: rotate(-150deg);
 }
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
-	:root {
-		--bg: #17181c;
-		--fg: #e3e4e8;
-	}
+  :root {
+    --bg: #17181c;
+    --fg: #e3e4e8;
+  }
 }
 /* Animations */
 @keyframes moveOut1 {
-	from { transform: translateY(0) scale(0); }
-	3% { transform: translateY(0.2em) scale(1); }
-	97% { transform: translateY(7.3em) scale(1); }
-	to { transform: translateY(7.5em) scale(0); }
+  from {
+    transform: translateY(0) scale(0);
+  }
+  3% {
+    transform: translateY(0.2em) scale(1);
+  }
+  97% {
+    transform: translateY(7.3em) scale(1);
+  }
+  to {
+    transform: translateY(7.5em) scale(0);
+  }
 }
 @keyframes moveOut2 {
-	from { transform: rotate(60deg) translateY(0) scale(0); }
-	3% { transform: rotate(60deg) translateY(0.2em) scale(1); }
-	97% { transform: rotate(60deg) translateY(7.3em) scale(1); }
-	to { transform: rotate(60deg) translateY(7.5em) scale(0); }
+  from {
+    transform: rotate(60deg) translateY(0) scale(0);
+  }
+  3% {
+    transform: rotate(60deg) translateY(0.2em) scale(1);
+  }
+  97% {
+    transform: rotate(60deg) translateY(7.3em) scale(1);
+  }
+  to {
+    transform: rotate(60deg) translateY(7.5em) scale(0);
+  }
 }
 @keyframes moveOut3 {
-	from { transform: rotate(120deg) translateY(0) scale(0); }
-	3% { transform: rotate(120deg) translateY(0.2em) scale(1); }
-	97% { transform: rotate(120deg) translateY(7.3em) scale(1); }
-	to { transform: rotate(120deg) translateY(7.5em) scale(0); }
+  from {
+    transform: rotate(120deg) translateY(0) scale(0);
+  }
+  3% {
+    transform: rotate(120deg) translateY(0.2em) scale(1);
+  }
+  97% {
+    transform: rotate(120deg) translateY(7.3em) scale(1);
+  }
+  to {
+    transform: rotate(120deg) translateY(7.5em) scale(0);
+  }
 }
 @keyframes moveOut4 {
-	from { transform: rotate(180deg) translateY(0) scale(0); }
-	3% { transform: rotate(180deg) translateY(0.2em) scale(1); }
-	97% { transform: rotate(180deg) translateY(7.3em) scale(1); }
-	to { transform: rotate(180deg) translateY(7.5em) scale(0); }
+  from {
+    transform: rotate(180deg) translateY(0) scale(0);
+  }
+  3% {
+    transform: rotate(180deg) translateY(0.2em) scale(1);
+  }
+  97% {
+    transform: rotate(180deg) translateY(7.3em) scale(1);
+  }
+  to {
+    transform: rotate(180deg) translateY(7.5em) scale(0);
+  }
 }
 @keyframes moveOut5 {
-	from { transform: rotate(240deg) translateY(0) scale(0); }
-	3% { transform: rotate(240deg) translateY(0.2em) scale(1); }
-	97% { transform: rotate(240deg) translateY(7.3em) scale(1); }
-	to { transform: rotate(240deg) translateY(7.5em) scale(0); }
+  from {
+    transform: rotate(240deg) translateY(0) scale(0);
+  }
+  3% {
+    transform: rotate(240deg) translateY(0.2em) scale(1);
+  }
+  97% {
+    transform: rotate(240deg) translateY(7.3em) scale(1);
+  }
+  to {
+    transform: rotate(240deg) translateY(7.5em) scale(0);
+  }
 }
 @keyframes moveOut6 {
-	from { transform: rotate(300deg) translateY(0) scale(0); }
-	3% { transform: rotate(300deg) translateY(0.2em) scale(1); }
-	97% { transform: rotate(300deg) translateY(7.3em) scale(1); }
-	to { transform: rotate(300deg) translateY(7.5em) scale(0); }
+  from {
+    transform: rotate(300deg) translateY(0) scale(0);
+  }
+  3% {
+    transform: rotate(300deg) translateY(0.2em) scale(1);
+  }
+  97% {
+    transform: rotate(300deg) translateY(7.3em) scale(1);
+  }
+  to {
+    transform: rotate(300deg) translateY(7.5em) scale(0);
+  }
 }
 @keyframes ripple {
-	from, to { width: 0.2em; }
-	33% { width: 2.4em; }
+  from,
+  to {
+    width: 0.2em;
+  }
+  33% {
+    width: 2.4em;
+  }
 }
