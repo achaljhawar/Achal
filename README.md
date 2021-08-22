@@ -1,2 +1,0 @@
-# achal
-My portfolio website 
